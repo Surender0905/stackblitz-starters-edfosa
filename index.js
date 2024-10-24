@@ -49,7 +49,7 @@ const filterByExchange = (exchange) => {
 app.get('/stocks/filter/exchange', (req, res) => {
   const { exchange } = req.query;
 
-  if (exchange !== 'NSE' && exchange !== 'BSE') {
+  if (exchange.toUpperCase() !== 'NSE' && exchange.toUpperCase() !== 'BSE') {
     return res
       .status(400)
       .json({ error: 'Invalid exchange. Use "NSE" or "BSE".' });
