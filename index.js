@@ -69,7 +69,7 @@ const filterByIndustry = (industry) => {
 app.get('/stocks/filter/industry', (req, res) => {
   const { industry } = req.query;
 
-  const validIndustries = ['Finance', 'Pharma', 'Power'];
+  const validIndustries = ['finance', 'pharma', 'power'];
   if (!validIndustries.includes(industry)) {
     return res.status(400).json({
       error: 'Invalid industry. Use "Finance", "Pharma", or "Power".',
